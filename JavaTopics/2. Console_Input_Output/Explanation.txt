@@ -1,0 +1,25 @@
+---------------------------------------------------------------------------------------------------------------------
+							The standard (non console) way of handling input/output
+Before java 6 the input/output was usually handled using the class System.in and System.out in the following manner:
+
+BufferedReader standardInput
+    = new BufferedReader(new InputStreamReader(System.in));
+ 
+System.out.print("Enter your name: ");
+String name = standardInput.readLine();
+System.out.println("Hello " + name);
+
+However, a new class was introduced in Java called System.console that changed the prefered way of handling
+input/output. The methods of the console class are the following:
+
+* format(String fmt, Object... args): works same as System.out.format()
+* printf(String format, Object... args): works same as System.out.printf()
+* readLine() : works same as BufferedReader.readLine()
+* readLine(String fmt, Object... args): prints a formatted string and reads input
+* readPassword(): reads a password to a char array
+* readPassword(String fmt, Object... args): prints a formatted string and reads a password to a char array
+
+---------------------------------------------------------------------------------------------------------------------
+
+Source: 
+https://www.codejava.net/java-se/file-io/java-console-input-output-examples
