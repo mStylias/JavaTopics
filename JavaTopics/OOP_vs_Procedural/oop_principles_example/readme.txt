@@ -18,4 +18,4 @@ the implementation details and complexities.
 extend the Shape class and have an IS-A relationship with it.
 * The polymorphism principle is demonstrated in the Main class, where an ArrayList of type Shape is
 created and all shapes (inluding Triangles and Rectangles) are added to it. After that their common
-methods are called, but perform different in each one
+methods are called, but perform differenty in each one
