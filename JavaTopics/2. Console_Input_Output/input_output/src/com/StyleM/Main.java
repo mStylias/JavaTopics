@@ -1,9 +1,7 @@
 package com.StyleM;
 
-import java.io.BufferedReader;
-import java.io.Console;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 public class Main {
 
@@ -51,7 +49,44 @@ public class Main {
                         + "right margin: n = %20.4f\n",
                 n);
 
-        System.out.println("-----------------------Login simulation using console class----------------------");
+        System.out.println("-------------------------------- Input methods----------------------------------");
+        // Using buffered reader to get console input
+        BufferedReader bufferedInput
+                = new BufferedReader(new InputStreamReader(System.in));
+
+        try {
+            System.out.println("Type your name");
+            String name = bufferedInput.readLine();
+            System.out.println("Hello " + name);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        // Using FileInputStream to get input from a file
+        try {
+            String fileName = "test.txt";
+            FileInputStream fileInput = new FileInputStream("src/com/StyleM/" + fileName);
+
+            System.out.println(fileName + " contains the following data:");
+
+            // Reads the first byte
+            int i = fileInput.read();
+
+            while(i != -1) {
+                System.out.print((char)i);
+
+                // Reads next byte from the file
+                i = fileInput.read();
+            }
+            fileInput.close();
+        }
+        catch(IOException e) {
+            System.out.println(e.getMessage());
+            System.out.println("Note that the FileInputStream in this case assumes the current directory" +
+                    " to be the example folder");
+        }
+
+        System.out.println("\n-----------------------Login simulation using console class----------------------");
         ConsoleLoginExample consoleLogin = new ConsoleLoginExample();
         consoleLogin.readUsername();
         consoleLogin.readPassword();
