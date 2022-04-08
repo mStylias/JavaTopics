@@ -1,0 +1,2 @@
+The example in 1. Object-Oriented vs Procedural vs Functional programming
+demostrates the use of classes and objects as well as fields and methods
