@@ -3,9 +3,9 @@ package com.StyleM;
 // A class representing a very basic car
 public class Car {
     // Private fields
-    String model;
-    String color;
-    double maxSpeed_KmH; // Measured in km/h
+    private String model;
+    private String color;
+    private double maxSpeed_KmH; // Measured in km/h
 
     // Getters - Setters
     public String getModel() {
